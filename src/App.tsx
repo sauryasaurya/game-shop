@@ -4,6 +4,7 @@ import "./App.css";
 import { ColorModeButton, useColorMode } from "@/components/ui/color-mode";
 import { Button, Grid, GridItem, Show } from "@chakra-ui/react";
 import { Demo } from "./demo";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,15 +16,16 @@ function App() {
         base: `"nav" "main"`,
         md: `"nav nav" "aside main"`,
       }}
-      height="50vh"
+      height="20vh"
+      margin={2}
     >
-      <GridItem area="nav" bg="coral">
-        Nav
+      <GridItem area="nav">
+        <NavBar />
       </GridItem>
-      <GridItem area="aside" bg="gold" display={{ base: "none", md: "block" }}>
+      <GridItem area="aside" display={{ base: "none", md: "block" }}>
         Aside
       </GridItem>
-      <GridItem area="main" bg="dodgerblue">
+      <GridItem area="main">
         Main
         <ColorModeButton />
       </GridItem>
