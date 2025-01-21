@@ -1,34 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+import { ColorModeButton, useColorMode } from "@/components/ui/color-mode";
+import { Button, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Demo } from "./demo";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const { toggleColorMode } = useColorMode();
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+        md: `"nav nav" "aside main"`,
+      }}
+      height="50vh"
+    >
+      <GridItem area="nav" bg="coral">
+        Nav
+      </GridItem>
+      <GridItem area="aside" bg="gold" display={{ base: "none", md: "block" }}>
+        Aside
+      </GridItem>
+      <GridItem area="main" bg="dodgerblue">
+        Main
+        <ColorModeButton />
+      </GridItem>
+    </Grid>
+  );
 }
 
-export default App
+export default App;
