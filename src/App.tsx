@@ -5,6 +5,7 @@ import { ColorModeButton, useColorMode } from "@/components/ui/color-mode";
 import { Button, Grid, GridItem, Show } from "@chakra-ui/react";
 import { Demo } from "./demo";
 import NavBar from "./components/NavBar";
+import GameGrid from "./components/GameGrid";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,7 +27,7 @@ function App() {
         Aside
       </GridItem>
       <GridItem area="main">
-        Main
+        <GameGrid />
         <ColorModeButton />
       </GridItem>
     </Grid>
