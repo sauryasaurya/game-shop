@@ -1,10 +1,13 @@
 import useGenres, { Genre } from "@/hooks/useGenres";
 import { getCroppedImageUrl } from "@/services/image-url";
-import { HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
+import { HStack, Image, List, ListItem, Spinner, Text } from "@chakra-ui/react";
 import React from "react";
 
 const GenreList = () => {
-  const { data: genres } = useGenres();
+  const { data: genres, isLoading, error } = useGenres();
+
+  if (isLoading) return <Spinner />;
+  if (error) return null;
 
   return (
     <List.Root listStyleType={"none"}>
