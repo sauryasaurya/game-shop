@@ -1,5 +1,7 @@
+import noImage from "../assets/PlaceholderImage.jpg";
+
 export const getCroppedImageUrl = (url: string) => {
-  if (!url) return ""; // Just a temporary Solution
+  if (!url) return noImage; // Just a temporary Solution
   const target = "media/";
   const index = url.indexOf(target) + target.length;
   return url.slice(0, index) + "crop/600/400/" + url.slice(index);
