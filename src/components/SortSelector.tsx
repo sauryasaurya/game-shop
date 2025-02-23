@@ -24,7 +24,6 @@ const SortSelector = ({ onSelectSortOrder, selectedOrder }: Props) => {
   const currentSortOrder = sortOrders.find(
     (order) => order.value === selectedOrder
   );
-  console.log(selectedOrder);
   return (
     <MenuRoot>
       <MenuTrigger asChild>
