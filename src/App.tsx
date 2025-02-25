@@ -29,7 +29,7 @@ function App() {
       margin={2}
       templateColumns={{
         base: "1fr",
-        md: "200px 1fr",
+        md: "220px 1fr",
       }}
     >
       <GridItem area="nav">
